@@ -11,7 +11,7 @@ pub fn process(branch_name: &str, title: &str, body: &str) {
 
 fn checkout(branch_name: &str) {
     Command::new("git")
-        .args(["checkout", "-b", branch_name, "main"])
+        .args(["checkout", "-b", branch_name, "testflight"])
         .output()
         .expect("failed");
 }

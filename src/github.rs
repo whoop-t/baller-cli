@@ -2,7 +2,6 @@
 use std::process::Command;
 
 pub fn process(branch_name: &str, title: &str, body: &str) {
-    println!("Creating {} and pr...", branch_name);
     checkout(branch_name);
     set_upstream(branch_name);
     empty_commit();
@@ -39,5 +38,5 @@ fn create_pr(title: &str, body: &str) {
     Command::new("gh")
         .args(["pr", "create", "-t", title, "-b", body])
         .output()
-        .expect("failed");
+        .expect("PR creation failed, please check gh cli is installed and auth is set up");
 }

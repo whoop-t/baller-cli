@@ -1,7 +1,7 @@
 # Baller cli
-### ⚠️ This is in testing phase still, dont expect to work if you stumble on to this
+### ⚠️ BETA, may have some issues
 
-Quickly create standardized branch and PR with JIRA metadata on using only ticket number.
+Quickly create standardized branch and PR with JIRA metadata.
 
 Install:
 ```
@@ -27,12 +27,14 @@ How to use:
 
 `baller -h` for all commands
 
-Currently, main purpose is for one line branch and pr creation
-
-In terminal, at location of baller repo
+Basic Usage with defaults:
 
 `baller -t 1111` <-- where 1111 is ticket number in JIRA
 
-This will run commands to auto create branch and create PR with metadata from JIRA to populate title and summary.
+Usage with -b (base branch):
 
-### ⚠️ Currently only creates branch based off testflight, will add options later
+`baller -t 1111 -b BBS-9999` 
+
+Usage with -b (base branch) and prefix argument:
+
+`baller -t 1111 -b BBS-9999 bugs`

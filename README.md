@@ -23,6 +23,7 @@ Setup:
  - auth your gh cli with `gh auth login` ([for help](https://cli.github.com/manual/gh_auth_login))
 
 How to use:
+
 `baller -h` for all commands
 Currently, main purpose is for one line branch and pr creation
 `baller -t 1111` <-- where 1111 is ticket number in JIRA

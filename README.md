@@ -1,4 +1,5 @@
 # Baller cli
+### ⚠️ This is in testing phase still, dont expect to work if you stumble on to this
 
 Quickly create standardized branch and PR with JIRA metadata on using only ticket number.
 

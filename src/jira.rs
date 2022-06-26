@@ -1,5 +1,5 @@
 // JIRA logic
-use reqwest::{Client, Error, StatusCode};
+use reqwest::{Client, Error};
 use serde::Deserialize;
 
 use crate::config;
@@ -34,6 +34,6 @@ pub async fn fetch(branch_name: &str) -> Result<(String, String), Error> {
         .await?;
 
     let empty_commit_msg = format!("{}: {}", r.key, r.fields.summary);
-    let pr_body = format!("Jira Link: [{}/{}/{}](url)", JIRA_BASE_URL, "browse", r.key);
+    let pr_body = format!("Jira Link: [TICKET]({}/{}/{})", JIRA_BASE_URL, "browse", r.key);
     Ok((empty_commit_msg, pr_body))
 }

@@ -25,8 +25,11 @@ Setup:
 How to use:
 
 `baller -h` for all commands
+
 Currently, main purpose is for one line branch and pr creation
+
 `baller -t 1111` <-- where 1111 is ticket number in JIRA
+
 This will run commands to auto create branch and create PR with metadata from JIRA to populate title and summary.
 
 ### ⚠️ Currently only creates branch based off testflight, will add options later

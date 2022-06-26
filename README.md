@@ -28,6 +28,8 @@ How to use:
 
 Currently, main purpose is for one line branch and pr creation
 
+In terminal, at location of baller repo
+
 `baller -t 1111` <-- where 1111 is ticket number in JIRA
 
 This will run commands to auto create branch and create PR with metadata from JIRA to populate title and summary.

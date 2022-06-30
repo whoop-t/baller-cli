@@ -1,5 +1,5 @@
 # Baller cli
-### ⚠️ BETA, may have some issues
+### ⚠️ BETA, works but error handling isnt great
 
 Quickly create standardized branch and PR with JIRA metadata.
 
@@ -29,12 +29,8 @@ How to use:
 
 Basic Usage with defaults:
 
-`baller -t 1111` <-- where 1111 is ticket number in JIRA
+`baller -t BBS-1111` <-- where BBS-1111 is ticket key in JIRA
 
 Usage with -b (base branch):
 
-`baller -t 1111 -b BBS-9999` 
-
-Usage with -b (base branch) and prefix argument:
-
-`baller -t 1111 -b BBS-9999 bugs`
+`baller -t BBS-1111 -b BBS-9999` <-- overwrite testflight default and use your own base branch

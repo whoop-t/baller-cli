@@ -1,12 +1,12 @@
 // Git and GH(cli) commands
 use std::process::Command;
 
-pub fn process(branch_name: &str, base_branch: &str, title: &str, body: &str) {
+pub fn process(branch_name: &str, base_branch: &str, title: &str) {
     checkout(branch_name, base_branch);
     set_upstream(branch_name);
     empty_commit();
     push();
-    create_pr(title, body, base_branch);
+    create_pr(title, base_branch);
 }
 
 fn checkout(branch_name: &str, base_branch: &str) {
@@ -34,9 +34,9 @@ fn push() {
     Command::new("git").arg("push").output().expect("failed");
 }
 
-fn create_pr(title: &str, body: &str, base_branch: &str) {
+fn create_pr(title: &str, base_branch: &str) {
     Command::new("gh")
-        .args(["pr", "create", "-t", title, "-b", body, "-B", base_branch])
+        .args(["pr", "create", "-t", title, "-B", base_branch, "-d", "-b", ""])
         .output()
         .expect("PR creation failed, please check gh cli is installed and auth is set up");
 }

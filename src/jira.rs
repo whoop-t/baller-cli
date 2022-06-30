@@ -18,7 +18,7 @@ pub struct Ticket {
     pub fields: TicketFields,
 }
 
-pub async fn fetch(branch_name: &str) -> Result<(String, String), Error> {
+pub async fn fetch(branch_name: &str) -> Result<String, Error> {
     // First try and get creds from local
     let creds = config::get_jira_creds().unwrap_or_else(|error| panic!("{}", error));
 
@@ -34,6 +34,6 @@ pub async fn fetch(branch_name: &str) -> Result<(String, String), Error> {
         .await?;
 
     let empty_commit_msg = format!("{}: {}", r.key, r.fields.summary);
-    let pr_body = format!("Jira Link: [TICKET]({}/{}/{})", JIRA_BASE_URL, "browse", r.key);
-    Ok((empty_commit_msg, pr_body))
+    // let pr_body = format!("Jira Link: [TICKET]({}/{}/{})", JIRA_BASE_URL, "browse", r.key);
+    Ok(empty_commit_msg)
 }
